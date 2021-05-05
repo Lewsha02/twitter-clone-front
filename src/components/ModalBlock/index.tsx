@@ -21,7 +21,11 @@ export const ModalBlock: React.FC<ModalProps> = ({
   onClose,
   visible = false,
   children,
-}: ModalProps): React.ReactElement => {
+}: ModalProps): React.ReactElement | null => {
+  if (!visible) {
+    return null;
+  }
+
   return (
     <Dialog
       open={visible}
@@ -38,6 +42,3 @@ export const ModalBlock: React.FC<ModalProps> = ({
     </Dialog>
   );
 };
-function useStyles() {
-  throw new Error("Function not implemented.");
-}
