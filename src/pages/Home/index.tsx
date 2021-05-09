@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Grid, InputAdornment, Paper, Typography } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/SearchOutlined';
 import PersonAddIcon from '@material-ui/icons/PersonAddOutlined';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 import ListItem from '@material-ui/core/ListItem/ListItem';
 import Divider from '@material-ui/core/Divider/Divider';
@@ -17,14 +16,12 @@ import { Tweet } from '../../components/Tweet';
 import { SideMenu } from '../../components/SideMenu';
 import { useHomeStyles } from './theme';
 import { SearchTextField } from '../../components/SearchTextField';
-import { useDispatch, useSelector } from 'react-redux';
 
 // TODO
 // 2. Попробовать сделать пункт "Главная" в меню
 
 export const Home = (): React.ReactElement => {
   const classes = useHomeStyles();
-  // const dispatch = useDispatch();
 
   return (
     <Container className={classes.wrapper} maxWidth="lg">
