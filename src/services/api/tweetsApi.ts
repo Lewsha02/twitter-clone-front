@@ -4,7 +4,7 @@ import axios from "axios";
 export const TweetsApi = {
   fetchTweets(): Promise<TweetsState["items"]> {
     return axios
-      .get("https://trycode.pw/c/2OBQ1.json")
+      .get("/tweets")
       .then(({ data }) => data);
   },
 };
