@@ -6,7 +6,7 @@ import { List } from "@material-ui/core";
 import { ListItem } from "@material-ui/core";
 import { ListItemText } from "@material-ui/core";
 import { Divider } from "@material-ui/core";
-import { selectIsTagsLoaded, selectTagsItems } from "../store/tags/selectors";
+import { selectIsTagsLoaded, selectTagsItems } from "../store/ducks/tags/selectors";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
