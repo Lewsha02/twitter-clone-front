@@ -1,14 +1,12 @@
-import React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-} from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
-import { useStylesSignIn } from "../pages/SignIn";
+import React from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import { useStylesSignIn } from '../pages/SignIn';
 
-interface ModalProps {
+interface ModalBlockProps {
   title?: string;
   children: React.ReactNode;
   classes?: ReturnType<typeof useStylesSignIn>;
@@ -16,25 +14,21 @@ interface ModalProps {
   onClose: () => void;
 }
 
-export const ModalBlock: React.FC<ModalProps> = ({
+export const ModalBlock: React.FC<ModalBlockProps> = ({
   title,
   onClose,
   visible = false,
   children,
-}: ModalProps): React.ReactElement | null => {
+}: ModalBlockProps): React.ReactElement | null => {
   if (!visible) {
     return null;
   }
 
   return (
-    <Dialog
-      open={visible}
-      onClose={onClose}
-      aria-labelledby='form-dialog-title'
-    >
-      <DialogTitle id='form-dialog-title'>
-        <IconButton onClick={onClose} color='secondary' aria-label='close'>
-          <CloseIcon style={{ fontSize: 26 }} color='secondary' />
+    <Dialog open={visible} onClose={onClose} aria-labelledby="form-dialog-title">
+      <DialogTitle id="form-dialog-title">
+        <IconButton onClick={onClose} color="secondary" aria-label="close">
+          <CloseIcon style={{ fontSize: 26 }} color="secondary" />
         </IconButton>
         {title}
       </DialogTitle>

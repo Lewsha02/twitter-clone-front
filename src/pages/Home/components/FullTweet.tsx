@@ -1,14 +1,11 @@
-import CircularProgress from "@material-ui/core/CircularProgress";
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { Tweet } from "../../../components/Tweet";
-import { fetchTweetData, setTweetData } from "../../../store/ducks/tweet/actionCreators";
-import {
-  selectIsTweetLoading,
-  selectTweetData,
-} from "../../../store/ducks/tweet/selectors";
-import { useHomeStyles } from "../theme";
+import CircularProgress from '@material-ui/core/CircularProgress';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { Tweet } from '../../../components/Tweet';
+import { fetchTweetData, setTweetData } from '../../../store/ducks/tweet/actionCreators';
+import { selectIsTweetLoading, selectTweetData } from '../../../store/ducks/tweet/selectors';
+import { useHomeStyles } from '../theme';
 
 export const FullTweet: React.FC = (): React.ReactElement | null => {
   const classes = useHomeStyles();
@@ -25,7 +22,7 @@ export const FullTweet: React.FC = (): React.ReactElement | null => {
 
     return () => {
       dispatch(setTweetData(undefined));
-    }
+    };
   }, [dispatch, id]);
 
   if (isLoading) {

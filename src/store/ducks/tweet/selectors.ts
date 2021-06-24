@@ -1,5 +1,5 @@
-import { RootState } from "../../store";
-import { LoadingState, TweetState } from "./contracts/state";
+import { RootState } from '../../store';
+import { LoadingState, TweetState } from './contracts/state';
 
 export const selectTweet = (state: RootState): TweetState => state.tweet;
 
